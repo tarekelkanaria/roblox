@@ -1,0 +1,543 @@
+/* Global rules */
+:root {
+  --mainColor: #dee1e3;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Mob Screen */
+@media (min-width: 576px) {
+  .container {
+    width: 570px;
+  }
+}
+
+/* Small Screen */
+@media (min-width: 768px) {
+  .container {
+    width: 765px;
+  }
+}
+
+/* Medium Screen */
+@media (min-width: 992px) {
+  .container {
+    width: 985px;
+  }
+}
+
+/* Large Screen */
+@media (min-width: 1200px) {
+  .container {
+    width: 1190px;
+  }
+}
+
+/* Very Large Screen */
+@media (min-width: 1400px) {
+  .container {
+    width: 1380px;
+  }
+}
+.box {
+  text-align: center;
+}
+.poster {
+  width: 10rem;
+  height: 10rem;
+  margin: auto;
+}
+/* build header */
+header {
+  background-color: var(--mainColor);
+  border-bottom: 1px solid #ccc;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+header .container i:not(.search i) {
+  font-size: 1.5em;
+  color: #393b3d;
+  cursor: pointer;
+}
+header .container .nav {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+header .container .features {
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+header .container .nav .drop-down {
+  position: relative;
+  display: inline-block;
+}
+header .features .bell:hover,
+header .features .buy-drop:hover,
+header .features .setting-drop:hover,
+header .nav .drop-down:hover {
+  background-color: #393b3d2f;
+}
+header .container .drop-down .menu {
+  padding: 10px;
+  border-radius: 4px;
+  position: relative;
+  transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+}
+header .container .drop-down .menu i {
+  color: #393b3d;
+}
+header .container .drop-down input {
+  top: 0;
+  opacity: 0;
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+header .container .drop-down input:hover {
+  cursor: pointer;
+}
+
+header .container .drop-down input:checked ~ .list {
+  transform: scaleY(1);
+  -webkit-transform: scaleY(1);
+}
+header .container .drop-down .list {
+  display: block;
+  position: absolute;
+  background: var(--mainColor);
+  width: fit-content;
+  transform: scaleY(0);
+  transform-origin: top left;
+  transition-duration: 0.2s;
+  -webkit-transform: scaleY(0);
+  -webkit-transform-origin: top left;
+  -webkit-transition-duration: 0.2s;
+}
+header .container .drop-down .list li {
+  padding: 2px 10px;
+  width: 12em;
+  margin-bottom: 5px;
+  word-break: keep-all;
+  white-space: nowrap;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 1em;
+  color: #5d5f61;
+}
+header .container .drop-down .list li:hover {
+  color: black;
+}
+header .container .drop-down .list li:first-child {
+  border-bottom: 2px solid #bdbdbd;
+}
+header .container .drop-down .list li i {
+  padding-right: 10px;
+}
+header .container .drop-down .list li:last-child a {
+  padding: 5px 15px;
+  border-radius: 4px;
+  background-color: #393b3d;
+  color: white;
+  font-weight: bold;
+}
+header .nav-bar {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+}
+header .nav-bar li {
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 5px;
+  position: relative;
+}
+header .nav-bar li:hover:after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  border-bottom: 1px solid black;
+  bottom: -24px;
+  left: 0;
+}
+header .search i {
+  position: relative;
+  top: 0;
+  left: 22px;
+}
+header .search input {
+  padding: 5px 20px;
+  border: none;
+  outline: none;
+}
+header .container .features .buy-drop {
+  position: relative;
+  display: inline-block;
+}
+header .container .buy-drop .menu {
+  padding: 10px;
+  border-radius: 4px;
+  position: relative;
+  transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+}
+header .container .buy-drop .menu i {
+  color: #393b3d;
+}
+header .container .buy-drop input {
+  top: 0;
+  opacity: 0;
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+header .container .buy-drop input:hover {
+  cursor: pointer;
+}
+
+header .container .buy-drop input:checked ~ .list {
+  transform: scaleY(1);
+  -webkit-transform: scaleY(1);
+}
+header .container .buy-drop .list {
+  display: block;
+  left: -60px;
+  position: absolute;
+  background: white;
+  width: fit-content;
+  transform: scaleY(0);
+  transform-origin: top left;
+  transition-duration: 0.2s;
+  -webkit-transform: scaleY(0);
+  -webkit-transform-origin: top left;
+  -webkit-transition-duration: 0.2s;
+}
+header .container .buy-drop .list li {
+  padding: 5px 10px;
+  width: 12em;
+  margin-bottom: 5px;
+  word-break: keep-all;
+  white-space: nowrap;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: #5d5f61;
+}
+header .container .buy-drop .list li:hover {
+  background-color: var(--mainColor);
+}
+header .container .features .setting-drop {
+  position: relative;
+  display: inline-block;
+}
+header .container .setting-drop .menu {
+  padding: 10px;
+  border-radius: 4px;
+  position: relative;
+  transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+}
+header .container .setting-drop .menu i {
+  color: #393b3d;
+}
+header .container .setting-drop input {
+  top: 0;
+  opacity: 0;
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+header .container .setting-drop input:hover {
+  cursor: pointer;
+}
+
+header .container .setting-drop input:checked ~ .list {
+  transform: scaleY(1);
+  -webkit-transform: scaleY(1);
+}
+header .container .setting-drop .list {
+  display: block;
+  position: absolute;
+  left: -100px;
+  background: white;
+  width: fit-content;
+  transform: scaleY(0);
+  transform-origin: top left;
+  transition-duration: 0.2s;
+  -webkit-transform: scaleY(0);
+  -webkit-transform-origin: top left;
+  -webkit-transition-duration: 0.2s;
+}
+header .container .setting-drop .list li {
+  padding: 5px 10px;
+  width: 8em;
+  margin-bottom: 5px;
+  word-break: keep-all;
+  white-space: nowrap;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: #5d5f61;
+}
+header .container .setting-drop .list li:hover {
+  background-color: var(--mainColor);
+}
+header .burger-menu {
+  display: none;
+}
+@media (max-width: 992px) {
+  header .burger-menu {
+    display: block;
+  }
+  header .container {
+    position: relative;
+  }
+  header .container .nav {
+    display: none;
+    flex-direction: column;
+    gap: 0.8rem;
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    background-color: var(--mainColor);
+    align-items: flex-start;
+    width: 40%;
+    padding-inline: 1rem;
+  }
+  header .burger-menu:hover + .nav,
+  header .burger-menu:hover + .features {
+    display: flex;
+  }
+  header .container .drop-down input:checked ~ .list {
+    z-index: 2;
+  }
+  header .nav-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  header .nav-bar li:hover:after {
+    bottom: -3px;
+  }
+  header .search {
+    width: 95%;
+    margin-bottom: 0.8rem;
+  }
+  header .search input {
+    padding: 5px 0 0 20px;
+    max-width: 100%;
+  }
+  header .container .features {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 34px;
+    right: 0px;
+    gap: 1rem;
+    padding: 0.4rem;
+    background-color: var(--mainColor);
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+  header .search i {
+    top: 22px;
+    left: 0;
+  }
+}
+/* Start section Part */
+section {
+  margin-top: 70px;
+}
+section .real-boxes {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+section .real-boxes .box p {
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+section .real-boxes .box .rate {
+  color: #797a7a;
+  cursor: pointer;
+}
+section .real-boxes .box img {
+  max-width: 100%;
+  max-height: 100%;
+  cursor: pointer;
+}
+section .fight-boxes {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+section .fight-boxes .box p {
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+section .fight-boxes .box .rate {
+  color: #797a7a;
+  cursor: pointer;
+}
+section .fight-boxes .box img {
+  max-width: 100%;
+  max-height: 100%;
+  cursor: pointer;
+}
+section .tycon-boxes {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+section .tycon-boxes .box p {
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+section .tycon-boxes .box .rate {
+  color: #797a7a;
+  cursor: pointer;
+}
+section .tycon-boxes .box img {
+  max-width: 100%;
+  max-height: 100%;
+  cursor: pointer;
+}
+section .adventure-boxes {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+section .adventure-boxes .box p {
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+section .adventure-boxes .box .rate {
+  color: #797a7a;
+  cursor: pointer;
+}
+section .adventure-boxes .box img {
+  max-width: 100%;
+  max-height: 100%;
+  cursor: pointer;
+}
+
+/* Start Footer Part */
+footer .list {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #bdbebe;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: #606162;
+}
+footer .list li {
+  cursor: pointer;
+}
+footer .list li:hover {
+  color: black;
+}
+footer .foot {
+  display: flex;
+}
+@media (max-width: 992px) {
+  footer .foot {
+    flex-wrap: wrap;
+  }
+}
+footer .lang {
+  position: relative;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+footer .lang i {
+  position: absolute;
+  top: 25px;
+  left: 15px;
+}
+footer .lang select {
+  width: 14em;
+  padding: 10px 20px;
+  cursor: pointer;
+  opacity: 0.8;
+  display: inline-block;
+}
+footer .lang select:hover {
+  opacity: 1;
+}
+footer .text p {
+  font-size: 12px;
+  font-weight: 500;
+  color: #606162;
+}
+footer .chat {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  background-color: var(--mainColor);
+  font-weight: bold;
+  padding: 2px 10px;
+  width: 12em;
+  cursor: pointer;
+}
